@@ -1,16 +1,17 @@
 {
-  "name": "express",
-  "version": "1.0.0",
-  "description": "express learning",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Muhsmmad Arslan",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.1",
-    "hbs": "^4.2.0",
-    "requests": "^0.3.0"
-  }
+    "name": "express",
+    "version": "1.0.0",
+    "description": "express learning",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node src/app.js"
+    },
+    "author": "Muhsmmad Arslan",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.18.1",
+        "hbs": "^4.2.0",
+        "requests": "^0.3.0"
+    }
 }
