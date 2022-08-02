@@ -1,22 +1,16 @@
 const cruDate = document.getElementById('date')
-    // let weathercon = document.getElementById('weatherco');
 let tempra = document.getElementById('tempra');
 let tempmin_max = document.getElementById('tempmin');
 let loc = document.getElementById('loc');
 let submit = document.getElementById('submit');
 let images = document.getElementById('images');
 
-// let searchTextVal = document.getElementById('searchValue');
 
 
 let tempStatus = "{%tempicon%}";
 
 
-if (tempStatus == "Sunny" || tempStatus == "Clear") {
-    images.innerHTML = "<img src=\"https://www.transparentpng.com/thumb/boy/MQZkNR-cartoon-charactersthe-boss-baby-pngu.png\" alt=\"Cartoon character, unhappy boy clipart hd download @transparentpng.com\">";
-} else {
-    images.innerHTML = "<img src=\"https://www.transparentpng.com/thumb/boy/uBxy9n-cartoon-charactersthe-boss-baby-pngu.png\" alt=\"Cartoon character, unhappy boy clipart hd download @transparentpng.com\">";
-}
+// 
 
 
 const weather = async() => {
@@ -123,9 +117,11 @@ const searchButton = async() => {
         tempmin_max.innerHTML = await `Min ${jsonData.main.temp_min}°C | Max ${jsonData.main.temp_max}°C`;
 
 
+        console.log(`jsonData is ====>> ${jsonData}`);
+
     } catch (error) {
         console.log(`Error is ====>> ${error}`);
-        // dcsd
+
     }
 }
 
