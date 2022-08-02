@@ -113,7 +113,7 @@ const searchButton = async() => {
 
         tempra.innerHTML = await `${jsonData.main.temp}°C`;
         console.log(`Error is ====>> Min ${jsonData.main.temp_min}°C and Max ${jsonData.main.temp_max}°C`);
-        loc.innerHTML = await `${jsonData.name} , ${jsonData.sys.country}`;
+        loc.innerHTML = await `(${tempStatus}) <br> ${jsonData.name} , ${jsonData.sys.country}`;
         tempmin_max.innerHTML = await `Min ${jsonData.main.temp_min}°C | Max ${jsonData.main.temp_max}°C`;
 
 
