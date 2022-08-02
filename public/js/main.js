@@ -4,6 +4,7 @@ let tempra = document.getElementById('tempra');
 let tempmin_max = document.getElementById('tempmin');
 let loc = document.getElementById('loc');
 let submit = document.getElementById('submit');
+let images = document.getElementById('images');
 
 // let searchTextVal = document.getElementById('searchValue');
 
@@ -11,15 +12,11 @@ let submit = document.getElementById('submit');
 let tempStatus = "{%tempicon%}";
 
 
-// if (tempStatus == "Sunny" || tempStatus == "Clear") {
-//     weathercon.innerHTML = "<i class='fa-solid fa-sun' style='color :#eccc68'></i>";
-// } else if (tempStatus == "Clouds") {
-//     weathercon.innerHTML = "<i class='fa-solid fa-cloud' style='color :#dfe4ea'></i>";
-// } else if (tempStatus == "Rainy") {
-//     weathercon.innerHTML = "<i class='fa-solid fa-cloud-rain' style='color :#a4b0be'></i>";
-// } else {
-//     weathercon.innerHTML = "<i class='fa-solid fa-cloud-rain' style='color :#44c3de'></i>";
-// }
+if (tempStatus == "Sunny" || tempStatus == "Clear") {
+    images.innerHTML = "<img src=\"https://www.transparentpng.com/thumb/boy/MQZkNR-cartoon-charactersthe-boss-baby-pngu.png\" alt=\"Cartoon character, unhappy boy clipart hd download @transparentpng.com\">";
+} else {
+    images.innerHTML = "<img src=\"https://www.transparentpng.com/thumb/boy/uBxy9n-cartoon-charactersthe-boss-baby-pngu.png\" alt=\"Cartoon character, unhappy boy clipart hd download @transparentpng.com\">";
+}
 
 
 const weather = async() => {
@@ -38,15 +35,11 @@ const weather = async() => {
         tempStatus = await jsonData.weather[0].main
 
 
-        // if (tempStatus == "Sunny" || tempStatus == "Clear") {
-        //     weathercon.innerHTML = "<i class='fa-solid fa-sun' style='color :#eccc68'></i>";
-        // } else if (tempStatus == "Clouds") {
-        //     weathercon.innerHTML = "<i class='fa-solid fa-cloud' style='color :#dfe4ea'></i>";
-        // } else if (tempStatus == "Rainy") {
-        //     weathercon.innerHTML = "<i class='fa-solid fa-cloud-rain' style='color :#a4b0be'></i>";
-        // } else {
-        //     weathercon.innerHTML = "<i class='fa-solid fa-cloud-rain' style='color :#44c3de'></i>";
-        // }
+        if (tempStatus == "Sunny" || tempStatus == "Clear") {
+            images.innerHTML = "<img src=\"https://www.transparentpng.com/thumb/boy/MQZkNR-cartoon-charactersthe-boss-baby-pngu.png\" alt=\"Cartoon character, unhappy boy clipart hd download @transparentpng.com\">";
+        } else {
+            images.innerHTML = "<img src=\"https://www.transparentpng.com/thumb/boy/uBxy9n-cartoon-charactersthe-boss-baby-pngu.png\" alt=\"Cartoon character, unhappy boy clipart hd download @transparentpng.com\">";
+        }
 
 
         tempra.innerHTML = await `${jsonData.main.temp}°C `;
@@ -117,7 +110,11 @@ const searchButton = async() => {
 
         tempStatus = await jsonData.weather[0].main
 
-
+        if (tempStatus == "Sunny" || tempStatus == "Clear") {
+            images.innerHTML = "<img src=\"https://www.transparentpng.com/thumb/boy/MQZkNR-cartoon-charactersthe-boss-baby-pngu.png\" alt=\"Cartoon character, unhappy boy clipart hd download @transparentpng.com\">";
+        } else {
+            images.innerHTML = "<img src=\"https://www.transparentpng.com/thumb/boy/uBxy9n-cartoon-charactersthe-boss-baby-pngu.png\" alt=\"Cartoon character, unhappy boy clipart hd download @transparentpng.com\">";
+        }
 
 
         tempra.innerHTML = await `${jsonData.main.temp}°C`;
@@ -128,9 +125,7 @@ const searchButton = async() => {
 
     } catch (error) {
         console.log(`Error is ====>> ${error}`);
-
-
-
+        // dcsd
     }
 }
 
