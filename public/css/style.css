@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato";
+}
+
+:root {
+    --main-bg: #1e272e;
+    --main-color: #0097e6;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    margin: 0;
+}
+
+.main_menu {
+    background-color: var(--main-bg);
+}
+
+.navbar {
+    color: #fff;
+    background-color: var(--main-bg);
+    padding: 2rem 0;
+}
+
+.navbar li {
+    font-size: 1.8rem;
+    margin-left: 2rem;
+}
+
+.navbar a {
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.navbar a:hover {
+    color: var(--main-color);
+}
+
+.navbar-toggler {
+    background-color: gray;
+}
+
+.fa-snowflake {
+    transition: all linear;
+    animation: rot 2s linear infinite;
+    color: var(--main-color);
+}
+
+@keyframes rot {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45%;
+    z-index: 4;
+    color: #02070f;
+}
+
+.search {
+    width: 70%;
+    position: relative;
+    display: flex;
+    border-radius: 1px 1px 1px 1px;
+    border: 6px solid var(--main-color);
+}
+
+.searchTerm {
+    width: 50%;
+    border: none;
+    padding: 0;
+    height: 40px;
+    font-size: 16px;
+    padding-left: 5px;
+    outline: none;
+    color: var(--main-color);
+}
+
+.searchTerm:focus {
+    color: var(--main-color);
+}
+
+.searchButton {
+    width: 50px;
+    height: 35px;
+    margin-top: 2px;
+    align-items: center;
+    border: 1px solid var(--main-color);
+    background: var(--main-color);
+    text-align: center;
+    color: rgb(252, 252, 252);
+    font-size: 20px;
+    position: relative;
+    left: 200px;
+}
+
+
+/*Resize the wrap to see the search bar change!*/
+
+.wrap {
+    width: 80%;
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.location {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-weight: 800;
+    font-size: 3.0rem;
+    align-items: center;
+    font-size: 600;
+    /* color: #02070f; */
+    color: var(--main-color);
+}
+
+.fa-street-view {
+    animation: rotate 3s infinite linear alternate;
+}
+
+#date {
+    text-align: center;
+    margin-top: 0.5rem;
+    color: var(--main-color);
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.temp {
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 5rem;
+    color: var(--main-color);
+}
+
+.info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45%;
+    z-index: 4;
+    color: #02070f;
+}
+
+.tempmin_max {
+    margin-top: 0.3rem;
+    text-align: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--main-color);
+}
+
+.main_header_left {
+    height: 70rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.main_header_left p {
+    font-size: 2rem;
+}
+
+.main_header_left .text_clr {
+    color: var(--main-color);
+}
+
+.main_header_left h1 {
+    font-size: 4rem;
+    margin: 1rem 0 4rem 0;
+    text-transform: capitalize;
+}
+
+.main_header_left button {
+    border: none;
+    padding: 0.8rem 1.8rem;
+    font-size: 1.4rem;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    box-shadow: 0 8px 6px -6px #000;
+    outline: none;
+}
+
+.main_header_left button:hover {
+    box-shadow: 0 8px 6px -6px var(--main-color);
+}
+
+.main_header_right {
+    height: 70rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.main_header_right figure img {
+    margin-top: 20rem;
+    height: 79rem;
+    filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.8));
+}
+
+
+/* footer code */
+
+footer {
+    width: 100%;
+    background-color: var(--main-bg);
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    line-height: 5rem;
+    font-size: 1.4rem;
+}
+
+
+/* response code*/
+
+@media (max-width: 768px) {
+    .main_header_left {
+        height: auto;
+        margin: 5rem 0;
+    }
+    .main_header_right {
+        height: auto;
+        margin: 3rem;
+    }
+}

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet" />
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: "Quicksand", sans-serif;
+        }
+        
+        body {
+            background: url('https://images.pexels.com/photos/268791/pexels-photo-268791.jpeg?auto=compress&cs=tinysrgb&w=1600');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            opacity: 0.8;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            flex-wrap: wrap;
+            height: 100vh;
+            width: 100vw;
+        }
+        
+        html,
+        body {
+            font-size: 62.5%;
+            height: 100%;
+        }
+        
+        html {
+            background: #eee;
+        }
+        
+        .box {
+            width: 20vw;
+            height: 50vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 2);
+            background: #a5bbdd;
+            position: relative;
+            overflow: hidden;
+            transform: translate3d(0, 0, 0);
+            min-width: 20rem;
+            min-height: 35rem;
+            margin-right: 25rem;
+        }
+        
+        .wave {
+            opacity: 0.3;
+            position: absolute;
+            top: 95%;
+            left: 50%;
+            background: #fff;
+            height: 50rem;
+            width: 50rem;
+            margin-left: -25rem;
+            margin-top: -25rem;
+            transform-origin: 50% 48%;
+            border-radius: 43%;
+            animation: dirf 3000ms infinite linear;
+            z-index: 1;
+        }
+        
+        .wave.-three {
+            animation: dirft 5000ms infinite linear;
+            z-index: 2 !important;
+            opacity: 0.2;
+        }
+        
+        .wave.-two {
+            animation: dirft 7000ms infinite linear;
+            z-index: 3 !important;
+            opacity: 0.1;
+        }
+        
+        .box::after {
+            content: "";
+            display: block;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 11;
+            transform: translate3d(0, 0, 0);
+        }
+        
+        @keyframes dirft {
+            from {
+                transform: rotate(0deg);
+            }
+            from {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 45%;
+            z-index: 4;
+            color: #02070f;
+        }
+        
+        .search {
+            width: 100%;
+            position: relative;
+            display: flex;
+        }
+        
+        .searchTerm {
+            width: 100%;
+            border: 3px solid #00B4CC;
+            border-right: none;
+            padding: 5px;
+            height: 20px;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            color: #9DBFAF;
+        }
+        
+        .searchTerm:focus {
+            color: #3fbdce;
+        }
+        
+        .searchButton {
+            width: 40px;
+            height: 36px;
+            border: 1px solid #3fbdce;
+            background: #3fbdce;
+            text-align: center;
+            color: #fff;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        /*Resize the wrap to see the search bar change!*/
+        
+        .wrap {
+            width: 80%;
+            position: absolute;
+            top: 8%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        /* .example {
+            justify-content: center;
+            align-items: center;
+            margin-top: 1.5rem;
+            text-align: center;
+            font-weight: 800;
+            font-size: 3.0rem;
+            font-size: 600;
+            color: #02070f;
+            display: table;
+            width: 100%;
+        } */
+        
+        .location {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-weight: 800;
+            font-size: 3.0rem;
+            font-size: 600;
+            color: #02070f;
+        }
+        
+        .fa-street-view {
+            animation: rotate 3s infinite linear alternate;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: translateX(-0.5rem);
+            }
+            to {
+                transform: translateX(0.5rem);
+            }
+        }
+        
+        #date {
+            text-align: center;
+            margin-top: 0.5rem;
+            color: #02070f;
+            font-size: 2rem;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+        
+        .temp {
+            margin-top: 2.5rem;
+            text-align: center;
+            font-size: 5rem;
+        }
+        
+        .tempmin_max {
+            margin-top: 0.3rem;
+            text-align: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 300;
+            color: #02070f;
+        }
+        
+        #weatherco {
+            height: 55%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 8rem;
+        }
+        
+        #weatherco.fas {
+            font-size: 8rem;
+            animation: fas-anime 8ms infinite linear alternate;
+        }
+        
+        @keyframes fas-anime {
+            from {
+                transform: scale(-1.2);
+            }
+            to {
+                transform: scale(1.2);
+            }
+        }
+        
+        @media (max-width:600px) {
+            .box {
+                width: 90vw;
+                height: 80vh;
+            }
+            .wave {
+                top: 85%;
+            }
+            #weatherco {
+                font-size: 8rem;
+            }
+            .info {
+                font-size: 1.5rem;
+                color: #02070f;
+            }
+        }
+        
+        @media (max-width:500px) {
+            .box {
+                height: 80vh;
+            }
+            .wave {
+                top: 115%;
+            }
+        }
+        
+        body>span {
+            width: 100vw;
+            text-align: center;
+            color: grey;
+        }
+    </style>
+
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3208/3208752.png" type="image/x-icon">
+    <title> Weather App</title>
+</head>
+
+<body>
+
+
+
+    <div class="box">
+
+        <div class="wrap">
+            <div class="search">
+                <input type="text" class="searchTerm" id="searchValue" placeholder="Search your city">
+                <button id="submit" class="searchButton">
+                 <i class="fa fa-search"></i>
+              </button>
+            </div>
+        </div>
+
+
+
+        <div class="wave -one"></div>
+        <div class="wave -two"></div>
+        <div class="wave -three"></div>
+
+
+
+        <div id="weatherco">
+            <i class="fa-solid fa-sun" style="color :#eccc68 "></i>
+        </div>
+
+
+
+
+        <div id="info">
+            <h2 id="loc" class="location"><i class="fa-solid fa-street-view"></i> {%tempcity%}, {%tempcountry%}</h2>
+            <p id="date" style="color: #02070f"> Thr | Jun 23 | 01:11pm</p>
+            <h1 id="tempra" class="temp" style="color: #02070f">{%tempvalue%}°C</h1>
+            <h3 id="tempmin" class="tempmin_max" style="color:#02070f">Min {%tempmin%}°C | Max {%tempmax%}°C</h3>
+        </div>
+
+
+
+    </div>
+
+    <script>
+        const cruDate = document.getElementById('date')
+        let weathercon = document.getElementById('weatherco');
+        let tempra = document.getElementById('tempra');
+        let tempmin_max = document.getElementById('tempmin');
+        let loc = document.getElementById('loc');
+        let submit = document.getElementById('submit');
+
+
+        let tempStatus = "{%tempicon%}";
+
+
+        if (tempStatus == "Sunny" || tempStatus == "Clear") {
+            weathercon.innerHTML = "<i class='fa-solid fa-sun' style='color :#eccc68'></i>";
+        } else if (tempStatus == "Clouds") {
+            weathercon.innerHTML = "<i class='fa-solid fa-cloud' style='color :#dfe4ea'></i>";
+        } else if (tempStatus == "Rainy") {
+            weathercon.innerHTML = "<i class='fa-solid fa-cloud-rain' style='color :#a4b0be'></i>";
+        } else {
+            weathercon.innerHTML = "<i class='fa-solid fa-cloud-rain' style='color :#44c3de'></i>";
+        }
+
+
+        const getDateTime = () => {
+
+            // for days
+            var weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fir", "Sat"];
+
+            // for month
+            var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+            let currentTime = new Date();
+            const day = weekDays[currentTime.getDay()];
+
+            var month1 = currentTime.getMonth();
+            var date = currentTime.getDate();
+
+            const month = months[month1];
+
+            var hours = currentTime.getHours();
+            var mint = currentTime.getMinutes();
+
+            let period = "AM";
+
+            if (hours > 11) {
+                period = "PM";
+                if (hours > 12) hours -= 12;
+            }
+            if (mint < 10) {
+                mint = "0" + mint;
+
+            }
+
+            console.log("month ==>> " + month1);
+            return `${day} | ${date} ${month} ${currentTime.getFullYear()}| ${hours}:${mint} ${period}`;
+        }
+
+        cruDate.innerHTML = getDateTime();
+        let jsonData = "";
+
+
+
+        const searchButton = async() => {
+            let searchText = await document.getElementById('searchValue').value.toUpperCase();
+            let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchText}&units=metric&appid=0350b868f3aa60e345eda28da479fdc3`;
+
+
+
+
+
+            try {
+                let data = await fetch(url);
+                let jsonData = await data.json();
+
+
+                tempStatus = await jsonData.weather[0].main
+
+
+                if (tempStatus == "Sunny" || tempStatus == "Clear") {
+                    weathercon.innerHTML = "<i class='fa-solid fa-sun' style='color :#eccc68'></i>";
+                } else if (tempStatus == "Clouds") {
+                    weathercon.innerHTML = "<i class='fa-solid fa-cloud' style='color :#dfe4ea'></i>";
+                } else if (tempStatus == "Rainy") {
+                    weathercon.innerHTML = "<i class='fa-solid fa-cloud-rain' style='color :#a4b0be'></i>";
+                } else {
+                    weathercon.innerHTML = "<i class='fa-solid fa-cloud-rain' style='color :#44c3de'></i>";
+                }
+
+                tempra.innerHTML = await `${jsonData.main.temp}°C`;
+                console.log(`Error is ====>> Min ${jsonData.main.temp_min}°C and Max ${jsonData.main.temp_max}°C`);
+                loc.innerHTML = await `${jsonData.name} , ${jsonData.sys.country}`;
+                tempmin_max.innerHTML = await `Min ${jsonData.main.temp_min}°C | Max ${jsonData.main.temp_max}°C`;
+
+
+            } catch (error) {
+                console.log(`Error is ====>> ${error}`);
+
+
+
+            }
+        }
+
+        submit.addEventListener("click", searchButton);
+    </script>
+
+</body>
+
+</html>

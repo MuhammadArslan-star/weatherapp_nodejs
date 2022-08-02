@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+   
+{{>link}}
+
+</head>
+
+<body>
+
+ 
+ {{>navbar}}
+    <!-- main_header -->
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="row">
+
+                    <!-- left side dev -->
+                    <div class="col-md-6 col-12 main_header_right">
+                        <figure>
+                            <img src="https://www.transparentpng.com/thumb/boy/MQZkNR-cartoon-charactersthe-boss-baby-pngu.png" alt="Cartoon character, unhappy boy clipart hd download @transparentpng.com">
+                        </figure>
+                    </div>
+
+
+                    <!-- right side dev -->
+                    <div class="col-md-6 col-12 main_header_left">
+<p>Welcome to the My Weather Site</p>
+                <div class="search">
+                     <input type="text" class="searchTerm" id="searchValue" placeholder="Search your city">
+                     <button id="submit" class="searchButton">
+                     <i class="fa fa-search"></i>
+              </button>
+            </div>
+
+                        
+
+                         <div id="info">
+
+                        <h1 id="loc" class="location">
+                            
+        <span class="text_clr"> {{tempcity}}, {{tempcountry}}</span>
+        
+        {{!-- <div id="weatherco">
+            <i class="fa-solid fa-sun" style="color :#eccc68 "></i>
+        </div></h1> --}}
+
+                         <p id="date" ><span class="text_clr"> Thr | Jun 23 | 01:11pm </span></p>
+                        
+                        <h1 id="tempra" class="temp" ><span class="text_clr">{{tempvalue}}°C</span></h1>
+                        
+                        <h1 id="tempmin" class="tempmin_max" ><span class="text_clr">Min {{tempmin}}°C | Max {{tempmax}}°C</span></h1>
+
+ </div>
+
+                        
+
+
+                        
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+     <!-- footer code -->
+   {{>footer}}
+<script src="js/main.js"></script>
+</body>
+
+</html>
